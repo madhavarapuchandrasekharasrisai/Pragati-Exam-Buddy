@@ -15,8 +15,8 @@ from streamlit_lottie import st_lottie
 from supabase import create_client, Client
 
 # --- Constants ---
-SUPABASE_URL = "https://qbmccrnndaawvackvwhk.supabase.co"
-SUPABASE_KEY = st.secrets["supabase"]["key"]  # Move key to secrets.toml
+SUPABASE_KEY = st.secrets["supabase"]["key"]
+SUPABASE_URL = st.secrets["supabase"]["url"]
 
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
