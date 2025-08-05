@@ -315,16 +315,12 @@ def logout():
 
 def preview_download_pdf(file_bytes):
     try:
-        with open("temp_preview.pdf", "wb") as f:
-            f.write(file_bytes)
-        with open("temp_preview.pdf", "rb") as f:
-            base64_pdf = base64.b64encode(f.read()).decode("utf-8")
-
+        base64_pdf = base64.b64encode(file_bytes).decode("utf-8")
         pdf_display = f"""
-        <iframe 
-            src="data:application/pdf;base64,{base64_pdf}" 
-            width="200%" 
-            height="600px" 
+        <iframe
+            src="data:application/pdf;base64,{base64_pdf}"
+            width="100%"
+            height="600px"
             type="application/pdf"
             style="border:none; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"
         ></iframe>
@@ -332,6 +328,7 @@ def preview_download_pdf(file_bytes):
         st.markdown(pdf_display, unsafe_allow_html=True)
     except Exception as e:
         st.error(f"Error previewing PDF: {e}")
+
 
 @st.cache_data(show_spinner=False)
 def get_pdf_ids(branch):
