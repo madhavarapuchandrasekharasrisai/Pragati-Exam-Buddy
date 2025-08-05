@@ -1,0 +1,7 @@
+fitz~=0.0.1.dev2
+pandas~=2.3.1
+plotly~=6.2.0
+streamlit~=1.47.1
+pillow~=11.3.0
+reportlab~=4.4.3
+supabase~=2.17.0
