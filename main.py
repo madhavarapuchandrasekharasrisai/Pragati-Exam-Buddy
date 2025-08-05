@@ -4,7 +4,7 @@ import json
 import random
 import zlib
 from datetime import datetime, timedelta
-import fitz  # from pymupdf
+import fitz  # PyMuPDF
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
@@ -14,63 +14,82 @@ from reportlab.pdfgen import canvas
 from streamlit_lottie import st_lottie
 from supabase import create_client, Client
 
+# --- Constants ---
 SUPABASE_URL = "https://qbmccrnndaawvackvwhk.supabase.co"
-SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFibWNjcm5uZGFhd3ZhY2t2d2hrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTI5MzU3NjMsImV4cCI6MjA2ODUxMTc2M30.1ZND-25O4SMocgUqZk6wucOwunNOkrJsJVrqobMnM2c"
+SUPABASE_KEY = st.secrets["supabase"]["key"]  # Move key to secrets.toml
+
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 BASE_DIR = "media"
-ADMIN_USERNAME = "madhavarapuchandrasekhara@gmail.com"
-ADMIN_PASSWORD = "pragati$123"
-
+ADMIN_USERNAME = st.secrets["admin"]["username"]
+ADMIN_PASSWORD = st.secrets["admin"]["password"]
+# --- Streamlit Page Config ---
 st.set_page_config(
     page_title="Pragati's Exam Buddy",
     page_icon="🎓",
     layout="wide",
     initial_sidebar_state="expanded"
 )
+
+# --- Session state initialization ---
 if 'logged_in' not in st.session_state:
     st.session_state.logged_in = False
+
 if 'page' not in st.session_state:
     st.session_state.page = "Home"
+
+
 @st.cache_data
 def load_lottiefile(filepath: str):
+    """Load a Lottie animation JSON file."""
     with open(filepath, "r") as f:
         return json.load(f)
 
 
 lottie_ani = load_lottiefile("animation1.json")
 
+
+# --- Sidebar UI ---
 with st.sidebar:
     st.image("prag logo.png")
     st.markdown("## Navigate")
+
     if st.button("🏠 Home"):
         st.session_state.page = "Home"
     if st.button("🧠 Aptitude Test"):
         st.session_state.page = "Aptitude Test"
 
     st.markdown(
-        '<h3 style=" text-align: center; font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif; color:#5c6bc0; font-size: 1rem; font-weight:400;padding: 12px 0px 12px;">Pragati\'s Exam Buddy </h3>',unsafe_allow_html=True)
+        '<h3 style="text-align: center; font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif; color:#5c6bc0; font-size: 1rem; font-weight:400; padding: 12px 0;">'
+        "Pragati's Exam Buddy</h3>",
+        unsafe_allow_html=True,
+    )
+
     st.markdown('<p class="subheading">"Download. Practice. Conquer."</p>', unsafe_allow_html=True)
 
     if lottie_ani:
-        st_lottie(lottie_ani, height=230, key="sidebar_animation", quality="high",speed =1)
+        st_lottie(lottie_ani, height=230, key="sidebar_animation", quality="high", speed=1)
     else:
         st.warning("⚠ Failed to load animation.")
-    st.markdown("""
-        <div style='text-align: center; color: #666; font-size: 1em;'>
-        🐞 Found a bug? <a href='mailto:madhavarapuchandrasekhara@gmail.com?subject=Bug Report'>Email us</a> 
-        or report it below
-        </div>
-        """, unsafe_allow_html=True)
 
-    bug_txt = st.text_input("Quick bug report:", placeholder="Briefly describe the issue...",
-                            label_visibility="collapsed")
+    st.markdown(
+        """
+        <div style='text-align: center; color: #666; font-size: 1em;'>
+            🐞 Found a bug? <a href='mailto:madhavarapuchandrasekhara@gmail.com?subject=Bug Report'>Email us</a> or report it below
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+    bug_txt = st.text_input("Quick bug report:", placeholder="Briefly describe the issue...", label_visibility="collapsed")
     if st.button("Report Bug"):
-        if not bug_txt:
-            st.error("Please Fill the Field, or Email us if you want to contact.")
+        if not bug_txt.strip():
+            st.error("Please fill the field or email us if you want to contact.")
         else:
-            st.success("Bug Reported, Email us if you want to contact.")
+            st.success("Bug reported! Email us if you want to contact.")
+
     st.markdown("---")
+
     if st.button("🔐 Admin Log In"):
         st.session_state.page = "Admin Login"
 
