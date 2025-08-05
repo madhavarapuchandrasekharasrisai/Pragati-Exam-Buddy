@@ -1,99 +1,75 @@
-✨ **Pragati's Exam Buddy** 🎓
-==========================
+🚀 **Pragati's Exam Buddy: Your Personalized Academic Companion** 🎓
+================================================================
 
-Your personalized academic companion. Download. Practice. Conquer.
+📖 Overview
+-----------
 
-Demo Animation
---------------
+Pragati's Exam Buddy is created to help students conquer exams, manage tasks, and develop skills with ease and confidence. It's a user-friendly Streamlit app packed with handy features, including Pragati's Question Papers, Subject Notes, Assignments, Aptitude Practice, and more, aiming to make your academic journey smoother.
 
-<p align="center">
- <img src="https://i.giphy.com/media/l0MYt6C0pE3EHW0KY/source.gif" alt="Pragati's Exam Buddy animation" width="400"/>
-</p>
+📸 Screenshot (Self-Upload Later)
+--------------------------------
 
-Welcome to Pragati's Exam Buddy!
-----------------------------------
+Visit the [GitHub Repository](https://github.com/22A31A4446/Exam-Buddy) and check the [Screenshots](https://github.com/22A31A4446/Exam-Buddy/tree/main/screenshots) Folder.
 
-_Pragati's Exam Buddy_ is a web app that helps you manage and access academic resources, track your progress, and prepare for exams with ease and confidence. With this app, you can:
-
-- Download and view past exam papers
-- Browse and study subject notes
-- Access and submit assignments
-- Take weekly quizzes and aptitude tests
-- Monitor your progress and streaks
-
-Start exploring the app by clicking on the navigation buttons in the sidebar, or continue reading to learn more about its features, technologies, and usage.
-
-Features 🌟
+✨ Features
 ----------
 
-- **Question Papers:** Download and view past exam papers and solutions.
-- **Subject Notes:** Access curated notes and summaries for quick and focused revision.
-- **Assignments:** Manage your tasks and uploads with ease.
-- **Weekly Quizzes:** Build habits through consistent testing and track your quiz streaks.
-- **Aptitude Practice:** Sharpen your skills for placements and beyond with practice problems and hints.
+- 📄 **Question Papers:** Browse and practice with previous exam papers and solutions, available for various branches and regulations
+- 📘 **Subject Notes:** Access curated subject notes and quick revisions for better retention
+- 📂 **Assignments:** Organize, submit, and manage academic tasks with deadlines in mind
+- 🧠 **Aptitude Practice:** Sharpen skills needed for placements and beyond with our practice problems and hints
 
-Enhancements 🌱
+💡 Enhancements
 ---------------
 
-- **Stress Coping:** Personalized tips and empathetic design to help manage exam stress.
-- **Content Insights:** Regularly updated content and resources to support your academic journey.
-- **Progress Overview:** Keep track of your study habits, assignments, and quiz performance.
+- 🔥 Personalized nudge with a progress tracker for returnees
+- 📊 Content insights with a detailed breakdown
+- 📥 Regularly updated resources to support students' learning journey
 
-Technologies 🛠
+🛠 Technologies
 --------------
 
-This project utilizes the following technologies and libraries:
+- **Streamlit:** Python library for creating interactive, web-based applications
+- **Supabase:** Backend-as-a-Service to handle data storage, real-time updates, and user authentication
+- **Python:** Moreover, we use several Python libraries, such as `pandas`, `plotly`, `fitz` (PyMuPDF), `base64`, `io`, `json`, `random`, `timedelta`, `datetime`, `create_client`, `zlib`, `streamlit_lottie`, `reportlab.pdfgen`, `PIL`, and `secrets` to ensure ease of use, pace of development, and a developer-friendly experience.
 
-- [Python](https://www.python.org/)
-- [Streamlit](https://www.streamlit.io/)
-- [Pandas](https://pandas.pydata.org/)
-- [Plotly](https://plotly.com/)
-- [Supabase](https://supabase.io/)
-- [PyMuPDF](https://pymupdf.readthedocs.io/)
-- [ReportLab](https://www.reportlab.com/)
-
-Getting Started 🚀
-------------------
-
-To get started, you need to:
-
-1. Clone this repository to your local machine.
-2. Install the required packages and libraries using `pip install -r requirements.txt`.
-3. Create a new Streamlit app using `streamlit run app.py`.
-
-Usage 🧑‍💻
-------
-
-Use the sidebar navigation menu to explore the different features of the app. Here's a brief overview of the available pages:
-
-- **Home:** Welcome to the app, learn about its features, and sign up for an account.
-- **Question Papers:** Download and view past exam papers.
-- **Subject Notes:** Browse curated notes and summaries.
-- **Assignments:** Manage and submit assignments.
-- **Weekly Quiz:** Test your knowledge and consistency with weekly quizzes.
-- **Aptitude Test:** Practice and sharpen your skills with aptitude problems and hints.
-- **Admin Login:** Sign in as an admin to manage and upload resources, subject notes, and assignments.
-
-Data Handling 🔄
----------------
-
-The app retrieves and stores data using Supabase as the backend database. Data is fetched and displayed using Python, Pandas, and Streamlit, while data visualization is handled by Plotly. The app also includes features for uploading, deleting, and managing data.
-
-License 📄
----------
-
-This project is licensed under the [MIT License](LICENSE).
-
-Acknowledgments 🙏
+🚀 Getting Started
 -----------------
 
-This app was designed and developed by:
+To start using Pragati's Exam Buddy, follow the instructions given in our [GitHub Repository](https://github.com/madhavarapuchandrasekharasrisai/Pragati-Exam-Buddy)).
 
-- [**22A31A4446**](https://github.com/22A31A4446)
-- [**22A31A4462**](https://github.com/22A31A4462)
+🧑‍💻 Usage
+---------
 
-as part of the _CSE - Data Science (2022-2026)_ program at our university. Thank you for using Pragati's Exam Buddy! We hope it helps you in your academic journey, and we welcome any feedback or suggestions for improvement. You can reach out to us via email or report any issues you find.
+- Access and practice with question papers, subject notes, and assignments
+- Improve skills with aptitude practice
+- Stay on top of things with quick tips for managing exam stress
+- Dive into advanced features like creating and submitting assignments
 
-<p align="center">
- <img src="https://i.giphy.com/media/xUOxf6C3svvg4M7qY4/source.gif" alt="Thank you GIF" width="200"/>
-</p>
+🔄 Data Handling
+--------------
+
+- **CRUD:** Creation, Retrieval, Updating, and Deletion of data via Streamlit interface and Supabase
+- **Authenticated Access:** Secure user access to specific app areas based on role
+- **Real-time Updates:** Immediate updates of data through the Streamlit app with Supabase
+
+📄 License
+----------
+
+Pragati's Exam Buddy is released under the [MIT License](https://github.com/22A31A4446/Exam-Buddy/blob/main/LICENSE)
+
+🙏 Acknowledgments
+------------------
+
+- Special thanks to [Streamlit](https://streamlit.io/)
+- Sharing our heartfelt gratitude with [Anima](https://lottiefiles.com/), [FontAwesome](https://fontawesome.com/)
+- And a massive acknowledgment to our entire team for their tireless contribution
+
+---
+
+<div style='text-align: center; font-size: 0.9em; color: #888;'>\
+  Designed & Developed by <strong> 22A31A4446 , 22A31A4462 .</strong><br>\
+  <em>✨ CSE - Data Science (2022-2026).</em>\
+</div>
+
+*For unrestricted use and spreading the positive vibes 🌈*
