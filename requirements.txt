@@ -1,7 +1,9 @@
 streamlit
-PyMuPDF
 pandas
 plotly
-Pillow
-streamlit_lottie
+pillow
+pymupdf  # For fitz
+reportlab
+supabase
+streamlit-lottie
 openai
